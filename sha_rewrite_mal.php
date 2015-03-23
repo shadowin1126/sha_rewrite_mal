@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sha Rewrite Mal
 Plugin URI: http://www.top-radio.org/
-Description: Rewrite for Malaysia Path, make /Malaysia/* useful.
+Description: Rewrite for malaysia Path, make /malaysia/* useful.
 Version: 1.0.0
 Author: shadowin
 Author URI: http://www.top-radio.org/
@@ -18,7 +18,7 @@ License: GPL2
 function my_flush_rules(){
 	$rules = get_option( 'rewrite_rules' );
 
-	if ( ! isset( $rules['(Malaysia)/(.+)$'] ) ) {
+	if ( ! isset( $rules['(malaysia)/(.+)$'] ) ) {
 		global $wp_rewrite;
 	   	$wp_rewrite->flush_rules();
 	}
@@ -27,7 +27,7 @@ function my_flush_rules(){
 // Adding a new rule
 function my_insert_rewrite_rules( $rules ) {
 	$newrules = array();
-	$newrules['Malaysia/(.+)$'] = 'index.php?pagename=Malaysia';
+	$newrules['malaysia/(.+)$'] = 'index.php?pagename=malaysia';
 	return $newrules + $rules;
 }
 
